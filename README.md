@@ -1,5 +1,5 @@
-# Search alogrithm - BFS, DFS, Astar
-`.py`-This is an implementation of the Simple Genetic Algorithm.Given a list of genes and a fitness function, the algorithm starts from a random population and evolves it, generation after generation, until it has converged to a good solution.
+#  Function search/generation using Genetic algorithm 
+This is an implementation of the Simple Genetic Algorithm.Given a list of genes and a fitness function, the algorithm starts from a random population and evolves it, generation after generation, until it has converged to a good solution.
 
 
 ## Problem statement 
