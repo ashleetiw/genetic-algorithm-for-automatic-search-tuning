@@ -5,16 +5,16 @@ from matplotlib import cm
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from genetic_algorithm import *
-
+import math
 
 def run_genetic_algorithm(func,min_or_max,num_eras, population_size, chromosome_length, 
                             crossover_probability=0.4,mutation_probability=0.005):
     
-    # '''
-    # # perform reproduction to create a new population from the old population
-    # # perform crossover on the population
-    # # perform mutation on the population
-    # # '''
+    '''
+        perform reproduction to create a new population from the old population
+        perform crossover on the population
+        perform mutation on the population
+    '''
         
     g=genetic_algorithm(min_or_max,func)
     population=g.generate_random_population(population_size,chromosome_length)
@@ -65,12 +65,29 @@ def dejong_decoder(coding):
 # populations=run_genetic_algorithm(func,min_or_max, num_eras=10, population_size=int(max_population), chromosome_length=panjang_target, 
 #                             crossover_probability=0.4,mutation_probability=0.005)
 
+def decode_function(s):
+    #  convert decimal to int 
+    x=int(s, 2)
+    H=[x,-x,math.log(x),math.tan(x),1/x,-1/x,math.sin(x),math.cos(x)]
 
+    total=0
+    if (len(s)<len(H)):
+         raise Exception('increase chromosome length')
+    elif (len(s)<len(H)):
+        raise Exception('decrease chromosome length')
+    else:
+        for i in range(len(s)):
+            total+=int(s[i])*H[i]  
+        return total
 
 min_or_max='MIN'
+
+
 obj_fun = dejong_OF
 func =  lambda c:obj_fun(*dejong_decoder(c)) 
-populations=run_genetic_algorithm(func,min_or_max, num_eras=10, population_size=10, chromosome_length=5, 
+
+func=lambda c:decode_function(c)
+populations=run_genetic_algorithm(func,min_or_max, num_eras=10, population_size=10, chromosome_length=8, 
                             crossover_probability=0.4,mutation_probability=0.005)
 
 
