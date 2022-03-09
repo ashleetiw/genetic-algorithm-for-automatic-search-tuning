@@ -10,9 +10,11 @@
 Genetic algorithm accepts a binary string.Eg ( '111000011010').To use genetic algorithm for finding the correct pattern, I mapped the chromosome length to the number of candidates in the hypothesis.
 #### Example
 Binary string 10100000110 maps to function log(x)-x -1/x+sin(x)
+![decode](https://github.com/ashleetiw/genetic-algorithm-for-automatic-search-tuning/blob/main/decode.png)
 
 
 ### Fitness function 
+
 
 ### Other Fitness Function 
 Benchmarks and decoders  that were implemented and tested here are:
@@ -35,13 +37,13 @@ It takes a population and generates a new population based on based roulette sel
 3. optimizer can be `Min` or `Max` based on if you want to optimize to global maxima or minima
 
 ### Crossover
-Crossover is the most significant phase in a genetic algorithm. For each pair of parents to be mated, a crossover point is chosen at random from within the genes.
+For each pair of parents to be mated, a crossover point is chosen at random from within the genes.
 Offspring are created by exchanging the genes of parents among themselves until the crossover point is reached.
 #### Example
 ![cross](https://github.com/ashleetiw/genetic-algorithm-for-automatic-search-tuning/blob/main/crossover.png)
 
 ### Mutation
-In certain new offspring formed, some of their genes can be subjected to a mutation with a low random probability. This implies that some of the bits in the bit string can be flipped. Mutation occurs to maintain diversity within the population and prevent premature convergence.
+Creates perturbations in the population. This implies that some of the bits in the bit string can be flipped with a probability P (called mutation probability). Mutation occurs to maintain diversity within the population and prevent premature convergence.
 #### Example
 ![mut](https://github.com/ashleetiw/genetic-algorithm-for-automatic-search-tuning/blob/main/mutation.png)
 
@@ -50,6 +52,12 @@ In certain new offspring formed, some of their genes can be subjected to a mutat
 The algorithm terminates if the population has converged (does not produce offspring which are significantly different from the previous generation). Then it is said that the genetic algorithm has provided a set of solutions to our problem.
 Another method is to define the number of eras that one wish to perform evolution
 
-### Evaluation
+
+## Main loop
+It runs  for any number of eras. In each era,we:
+1. perform reproduction to create a new population from the old population 
+2. perform crossover on the population
+3. perform mutation on the population 
+
 
 
