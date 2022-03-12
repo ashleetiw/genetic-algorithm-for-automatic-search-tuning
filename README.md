@@ -14,12 +14,12 @@ Binary string 10100000110 maps to function log(x)-x -1/x+sin(x)
 
 
 ### Fitness function 
-
+Benchmarks and decoders that `main.py` has implemented and tested here is:
+1. DeJong function (Sphere function)
+2. Using base 10 value of the binary string to represent the fitness of the chromosome
 
 ### Other Fitness Function 
-Benchmarks and decoders  that were implemented and tested here are:
-1. DeJong function (Sphere function)
-2. Elementary Symmetric Function
+![obje](https://github.com/ashleetiw/genetic-algorithm-for-automatic-search-tuning/blob/main/objective.png)
 
 
 ## General Genetic Algorithm 
@@ -58,6 +58,10 @@ It runs  for any number of eras. In each era,we:
 1. perform reproduction to create a new population from the old population 
 2. perform crossover on the population
 3. perform mutation on the population 
+
+
+![p1](https://github.com/ashleetiw/genetic-algorithm-for-automatic-search-tuning/blob/main/gaplot.png)
+![p2](https://github.com/ashleetiw/genetic-algorithm-for-automatic-search-tuning/blob/main/gaplot2.png)
 
 
 

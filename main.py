@@ -37,7 +37,7 @@ def split_string_into_chunks(string, n):
     return [string[i:i+n] for i in range(0, len(string), n)]
 
 def dejong_decoder(coding):
-    bits_list = split_string_into_chunks(coding,3)
+    bits_list = split_string_into_chunks(coding,4)
     # take first bit as the sign, and the remaining bits as integers
     signs_nums = [(-1 if bits[0] == '0' else 1, int(bits[1:], 2)) 
                   for bits in bits_list]
@@ -82,12 +82,14 @@ def decode_function(s):
 
 min_or_max='MIN'
 
-
+################ define fitness function here###############################################
 obj_fun = dejong_OF
 func =  lambda c:obj_fun(*dejong_decoder(c)) 
+# func=lambda c:decode_function(c)
 
-func=lambda c:decode_function(c)
-populations=run_genetic_algorithm(func,min_or_max, num_eras=10, population_size=10, chromosome_length=8, 
+
+##########################################################
+populations=run_genetic_algorithm(func,min_or_max, num_eras=50, population_size=100, chromosome_length=8, 
                             crossover_probability=0.4,mutation_probability=0.005)
 
 
@@ -115,9 +117,9 @@ x_optima, y_optima = zip(*optima) # unzip pairs into two sequences
 
 fig, ax = plt.subplots(1)
 l_mins, l_maxs, l_avgs = ax.plot(x_axis, mins, 'r--', maxs, 'b--', avgs, 'g-')
-scatter_ceil = ax.scatter(x_optima, y_optima, c='purple')
+# scatter_ceil = ax.scatter(x_optima, y_optima, c='purple')
 plt.legend(
-    (l_mins, l_maxs, l_avgs, scatter_ceil),("min pop fitness", "max pop fitness", "average pop fitness", "occurrences of global optimum"), loc="upper right",)
+    (l_mins, l_maxs, l_avgs),("min pop fitness", "max pop fitness", "average pop fitness"), loc="upper right",)
 # set parameters for the axes
 ax.set_xlim(0, len(populations))
 ax.set_ylim(0, int(max(maxs) * 1.20))
