@@ -21,7 +21,7 @@ Benchmarks and decoders that `main.py` has implemented and tested here is:
 ### Other Fitness Function 
 ![obje](https://github.com/ashleetiw/genetic-algorithm-for-automatic-search-tuning/blob/main/objective.png)
 
-
+*https://github.com/epfl-disal/SwarmViz/tree/master/src*
 ## General Genetic Algorithm 
 ![main](https://github.com/ashleetiw/genetic-algorithm-for-automatic-search-tuning/blob/main/Untitled%20drawing.jpg)
 
@@ -65,3 +65,12 @@ It runs  for any number of eras. In each era,we:
 
 
 
+## References 
+
+1: [https://www.ewh.ieee.org/soc/es/May2001/14/Begin.html](https://www.ewh.ieee.org/soc/es/May2001/14/Begin.htm)
+
+2: [https://github.com/epfl-disal/SwarmViz/tree/master/src](https://github.com/epfl-disal/SwarmViz/tree/master/src)
+
+3: [https://medium.com/backyard-programmers/genetic-algorithm-b5bea51dd969](https://medium.com/backyard-programmers/genetic-algorithm-b5bea51dd969)
+
+4: [https://cppsecrets.com/article.php?id=8633](https://cppsecrets.com/article.php?id=8633)
